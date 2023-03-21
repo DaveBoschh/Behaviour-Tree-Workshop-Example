@@ -1,0 +1,18 @@
+tree("Root")
+    sequence
+        SetDestinationToDoor
+        MoveToDestination
+        
+        fallback
+            sequence
+                IsDoorOpen
+                SetDestinationToOtherRoom
+                MoveToDestination
+                Wait(1.0)
+                CloseDoor
+            sequence
+                HasKey
+                OpenDoor
+            sequence
+                SetDestinationToKeyPad
+                MoveToDestination
